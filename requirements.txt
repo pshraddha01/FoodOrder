@@ -13,3 +13,4 @@ psycopg2==2.9.5
 psycopg2-binary==2.9.5
 SQLAlchemy==1.4.44
 Werkzeug==2.2.2
+python-dotenv==0.21.0
