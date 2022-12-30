@@ -3,13 +3,15 @@ from userException import customException
 from flask_sqlalchemy import SQLAlchemy
 from flask_session import Session
 from sqlalchemy import or_
+from dotenv import load_dotenv
+load_dotenv()
 import datetime
 import os
 
 # creating Flask App
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:010201@127.0.0.1:5432/foodorder"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SECRET_KEY'] = "SECRET KEY"
 app.config['SESSION_TYPE'] = "filesystem"
 app.config['UPLOAD_FOLDER'] = "static/image/"
